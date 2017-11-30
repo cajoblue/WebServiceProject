@@ -1,0 +1,10 @@
+C:\Users\celsoTeixeira\Google Drive\FACULDADE\3ºano\1ºsemestre\Integracao de Sistemas de Informacao\Projeto\WebServiceSolution\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\celsoTeixeira\Google Drive\FACULDADE\3ºano\1ºsemestre\Integracao de Sistemas de Informacao\Projeto\WebServiceSolution\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\celsoTeixeira\Google Drive\FACULDADE\3ºano\1ºsemestre\Integracao de Sistemas de Informacao\Projeto\WebServiceSolution\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\celsoTeixeira\Google Drive\FACULDADE\3ºano\1ºsemestre\Integracao de Sistemas de Informacao\Projeto\WebServiceSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\celsoTeixeira\Google Drive\FACULDADE\3ºano\1ºsemestre\Integracao de Sistemas de Informacao\Projeto\WebServiceSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\celsoTeixeira\Google Drive\FACULDADE\3ºano\1ºsemestre\Integracao de Sistemas de Informacao\Projeto\WebServiceSolution\WindowsFormsApp1\obj\Debug\WSCliente.csproj.GenerateResource.Cache
+C:\Users\celsoTeixeira\Google Drive\FACULDADE\3ºano\1ºsemestre\Integracao de Sistemas de Informacao\Projeto\WebServiceSolution\WindowsFormsApp1\obj\Debug\WSCliente.csproj.CoreCompileInputs.cache
+C:\Users\celsoTeixeira\Google Drive\FACULDADE\3ºano\1ºsemestre\Integracao de Sistemas de Informacao\Projeto\WebServiceSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\celsoTeixeira\Google Drive\FACULDADE\3ºano\1ºsemestre\Integracao de Sistemas de Informacao\Projeto\WebServiceSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\celsoTeixeira\Google Drive\FACULDADE\3ºano\1ºsemestre\Integracao de Sistemas de Informacao\Projeto\WebServiceSolution\WindowsFormsApp1\obj\Debug\WSCliente.csprojResolveAssemblyReference.cache

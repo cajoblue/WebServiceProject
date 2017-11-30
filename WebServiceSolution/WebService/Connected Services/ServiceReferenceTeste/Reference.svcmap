@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="815545fc-def5-4f11-8577-abd8fbb825cf" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:65166/ServiceBloodCrowd.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceBloodCrowd.xsd" MetadataType="Schema" ID="184b3db7-e170-4bc7-ae53-b3568e77b273" SourceId="1" SourceUrl="http://localhost:65166/ServiceBloodCrowd.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceBloodCrowd1.xsd" MetadataType="Schema" ID="58c45daa-7983-4f5f-8597-0ace4690a045" SourceId="1" SourceUrl="http://localhost:65166/ServiceBloodCrowd.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceBloodCrowd.wsdl" MetadataType="Wsdl" ID="23dbd80c-b7cd-4c03-a78f-2f78bfc60000" SourceId="1" SourceUrl="http://localhost:65166/ServiceBloodCrowd.svc?wsdl" />
+    <MetadataFile FileName="ServiceBloodCrowd.disco" MetadataType="Disco" ID="3cff643e-3d1a-40b5-bece-935c63f4ea54" SourceId="1" SourceUrl="http://localhost:65166/ServiceBloodCrowd.svc?disco" />
+    <MetadataFile FileName="ServiceBloodCrowd2.xsd" MetadataType="Schema" ID="8568369a-b785-4da7-b6fd-a596dce68da0" SourceId="1" SourceUrl="http://localhost:65166/ServiceBloodCrowd.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
