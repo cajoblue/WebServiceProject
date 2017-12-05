@@ -11,9 +11,9 @@ using WindowsFormsApp1.ServiceReference1;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class Form_Main : Form
     {
-        public Form1()
+        public Form_Main()
         {
             InitializeComponent();
 

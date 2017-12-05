@@ -23,6 +23,7 @@ namespace WebService
             FILEPATH = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "blooddonors.xml");
         }
 
+        //Listar todos os dadores
         public List<Donor> GetDonors()
         {
             XmlDocument doc = new XmlDocument();
@@ -33,7 +34,7 @@ namespace WebService
 
             for (int i = 0; i < donorNodes.Count; i++)
             {
-                //  XmlNode dadorNode = donorNodes[i].ChildNodes;
+                //XmlNode dadorNode = donorNodes[i].ChildNodes;
                 int cm = Convert.ToInt32(donorNodes[i].ChildNodes[20].InnerText);
                 double kg = double.Parse(donorNodes[i].ChildNodes[19].InnerText, CultureInfo.InvariantCulture);
                 int age = Int32.Parse(donorNodes[i].ChildNodes[14].InnerText);
@@ -58,8 +59,60 @@ namespace WebService
 
                 list_dadores.Add(newDador);
             }
-
             return list_dadores;
         }
+
+        //Pesquisar dadores por nome
+        public List<Donor> searchByName(string name)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(FILEPATH);
+            XmlElement root = doc.DocumentElement;
+            List<Donor> list_dadoresFounded = new List<Donor>();
+
+            if (root.HasChildNodes)
+            {
+                for (int i = 0; i < root.ChildNodes.Count; i++)
+                {
+                    XmlNode bookNode = root.ChildNodes[i];
+                    string nameDador = bookNode.ChildNodes[2].InnerText;
+
+                    if (nameDador.ToUpper().Equals(name.ToUpper()))
+                    {
+                        XmlNode dadorNode = root.ChildNodes[i];
+                        int cm = Convert.ToInt32(dadorNode.ChildNodes[20].InnerText);
+                        double kg = double.Parse(dadorNode.ChildNodes[19].InnerText, CultureInfo.InvariantCulture);
+                        int age = Int32.Parse(dadorNode.ChildNodes[14].InnerText);
+                        int num_dador = int.Parse(dadorNode.ChildNodes[0].InnerText);
+                        int phone_number;
+                        int.TryParse(dadorNode.ChildNodes[11].InnerText, out phone_number);
+                        DateTime birthDate;
+                        DateTime.TryParse(dadorNode.ChildNodes[13].InnerText, out birthDate);
+                        double latitude;
+                        double.TryParse(dadorNode.ChildNodes[22].InnerText, out latitude);
+                        double longitude;
+                        double.TryParse(dadorNode.ChildNodes[23].InnerText, out longitude);
+                        Donor newDador = new Donor(num_dador, dadorNode.ChildNodes[1].InnerText, dadorNode.ChildNodes[2].InnerText,
+                                                   dadorNode.ChildNodes[3].InnerText, dadorNode.ChildNodes[4].InnerText,
+                                                   dadorNode.ChildNodes[5].InnerText, dadorNode.ChildNodes[6].InnerText,
+                                                   dadorNode.ChildNodes[7].InnerText, dadorNode.ChildNodes[8].InnerText,
+                                                   dadorNode.ChildNodes[9].InnerText, dadorNode.ChildNodes[10].InnerText,
+                                                   phone_number, dadorNode.ChildNodes[12].InnerText, birthDate, age, dadorNode.ChildNodes[15].InnerText,
+                                                   dadorNode.ChildNodes[16].InnerText, dadorNode.ChildNodes[17].InnerText, dadorNode.ChildNodes[18].InnerText,
+                                                   kg, cm, dadorNode.ChildNodes[21].InnerText, latitude, longitude);
+                        list_dadoresFounded.Add(newDador);
+                    }
+                }
+            }
+            else
+            {
+                return null;
+            }
+            return list_dadoresFounded;
+        }
+
+
+
+
     }
 }

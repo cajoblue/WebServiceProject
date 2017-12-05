@@ -19,10 +19,16 @@ namespace WebService
         [Description("Gets all the Donors from the XML.")]
         List<Donor> GetDonors();
 
+        //Listar dadores de sangue pelo nome pesquisado.
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "/donors/name")]
+        [Description("Gets the Donors from the XML by name.")]
+        List<Donor> searchByName(string name);
+
     }
 
     [DataContract]
-    public class Donor : DadosExtra
+    public class Donor //: DadosExtra
     {
         private int number;
         private string gender;
@@ -242,7 +248,7 @@ namespace WebService
             set => longitude = value;
         }
 
-        
+           /*     
         [DataMember]
         public double GetIMC
 
@@ -257,7 +263,6 @@ namespace WebService
 
                 return imc;
             }
-
         }
         
         
@@ -284,32 +289,26 @@ namespace WebService
         }
 
         // Use a data contract as illustrated in the sample below to add composite types to service operations.
-    
     }
+
     [DataContract]
     public class DadosExtra
     {
         [DataMember]
         public int Age
-
         {
             get
             {
-
                 int age;
-
                 DateTime today = DateTime.Today;
-
                 age = today.Year - birthday.Year;
-
                 if (birthday.DayOfYear < today.DayOfYear)
                 {
                     age -= 1;
                 }
-
                 return age;
             }
-
-        }
+        }*/
     }
+
 }
