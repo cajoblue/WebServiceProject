@@ -13,4 +13,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="searchByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="searchByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WebService" minOccurs="0" name="searchByNameResult" nillable="true" type="q2:ArrayOfDonor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

@@ -13,10 +13,20 @@
   <wsdl:message name="IServiceBloodCrowd_GetDonors_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDonorsResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceBloodCrowd_searchByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:searchByName" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBloodCrowd_searchByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchByNameResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServiceBloodCrowd">
     <wsdl:operation name="GetDonors">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceBloodCrowd/GetDonors" message="tns:IServiceBloodCrowd_GetDonors_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceBloodCrowd/GetDonorsResponse" message="tns:IServiceBloodCrowd_GetDonors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searchByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBloodCrowd/searchByName" message="tns:IServiceBloodCrowd_searchByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBloodCrowd/searchByNameResponse" message="tns:IServiceBloodCrowd_searchByName_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServiceBloodCrowd" type="tns:IServiceBloodCrowd">
@@ -30,10 +40,19 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="searchByName">
+      <soap:operation soapAction="http://tempuri.org/IServiceBloodCrowd/searchByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="ServiceBloodCrowd">
     <wsdl:port name="BasicHttpBinding_IServiceBloodCrowd" binding="tns:BasicHttpBinding_IServiceBloodCrowd">
-      <soap:address location="http://localhost:65166/ServiceBloodCrowd.svc" />
+      <soap:address location="http://localhost:65166/ServiceBloodCrowd.svc/soap" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

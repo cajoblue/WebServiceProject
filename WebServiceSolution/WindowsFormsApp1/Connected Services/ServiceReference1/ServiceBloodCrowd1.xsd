@@ -8,7 +8,6 @@
   <xs:element name="ArrayOfDonor" nillable="true" type="tns:ArrayOfDonor" />
   <xs:complexType name="Donor">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Age" type="xs:int" />
       <xs:element minOccurs="0" name="Birthday" type="xs:dateTime" />
       <xs:element minOccurs="0" name="BloodType" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Centimeters" type="xs:int" />
@@ -16,7 +15,6 @@
       <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="GetIMC" type="xs:double" />
       <xs:element minOccurs="0" name="GivenName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Guid" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Kilograms" type="xs:double" />

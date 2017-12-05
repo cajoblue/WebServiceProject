@@ -21,7 +21,7 @@ namespace WebService
 
         //Listar dadores de sangue pelo nome pesquisado.
         [OperationContract]
-        [WebInvoke(Method = "GET", UriTemplate = "/donors/name")]
+        [WebInvoke(Method = "GET", UriTemplate = "/searchByName?donorName={name}")]
         [Description("Gets the Donors from the XML by name.")]
         List<Donor> searchByName(string name);
 
