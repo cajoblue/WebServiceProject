@@ -16,70 +16,104 @@ namespace WindowsFormsApp1
     public partial class Form_Main : Form
     {
         public int valida = 0;
+        public ServiceReference1.ServiceBloodCrowdClient client = new ServiceReference1.ServiceBloodCrowdClient();
 
         public Form_Main()
         {
-            InitializeComponent();            
-
-            using (ServiceReference1.ServiceBloodCrowdClient client = new ServiceReference1.ServiceBloodCrowdClient())
+            InitializeComponent();
+            valida += 1;
+            //Listar dadores quando o form principal é carregado.
+            foreach (var var_dador in client.GetDonors())
             {
-                foreach (var var_dador in client.GetDonors())
+                String[] coluna = { var_dador.GivenName, var_dador.City, var_dador.EmailAddress,
+                        var_dador.Age.ToString(), var_dador.BloodType,
+                        var_dador.Imc.ToString(), var_dador.Guid };
+                var listviwItensViewItem = new ListViewItem(coluna);
+                listView1.Items.Add(listviwItensViewItem);
+            }
+            //listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+        }
+
+        //Botão pesquisar dador pelo Name.
+        private void btn_SearchName_Click(object sender, EventArgs e)
+        {
+            //int var_width = 70;
+            listView1.Items.Clear();
+            Donor[] listDonor = client.searchByName(searchName_tb.Text);
+            
+            foreach (var var_dador in listDonor)
+            {
+                String[] coluna = { var_dador.GivenName, var_dador.City, var_dador.EmailAddress, var_dador.Age.ToString(), var_dador.BloodType, var_dador.Imc.ToString(), var_dador.Guid };
+                var listviwItensViewItem = new ListViewItem(coluna);
+                listView1.Items.Add(listviwItensViewItem);
+            }
+            //listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            //this.columnHeader3.Width = var_width;
+            //this.columnHeader4.Width = var_width;
+
+            if (btn_SearchName.Text == "" || listDonor.Length == 0)
+            {
+                String[] coluna = null;
+                MessageBox.Show("Donor not found!");
+                listDonor = client.GetDonors();
+                foreach (var var_dador in listDonor)
                 {
-                    String[] coluna = { var_dador.GivenName, var_dador.City, var_dador.EmailAddress,
-                        /*var_dador.Age.ToString(), var_dador.BloodType,
-                        /*var_dador.GetIMC.ToString(),*/ var_dador.Guid };
+                    coluna = new string[] { var_dador.GivenName, var_dador.City, var_dador.EmailAddress, var_dador.Age.ToString(), var_dador.BloodType, var_dador.Imc.ToString(), var_dador.Guid };
                     var listviwItensViewItem = new ListViewItem(coluna);
                     listView1.Items.Add(listviwItensViewItem);
                 }
-                listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+                //listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+                //this.columnHeader3.Width = var_width;
+                //this.columnHeader4.Width = var_width;
             }
         }
 
-        private void btn_SearchName_Click(object sender, EventArgs e)
+        //ComboBox pesquisar pelo BloodType
+        private void searchBloodType_cbx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            
-                listView1.Items.Clear();
+            listView1.Items.Clear();
+            //int var_width = 70;
+            Donor[] listDonor = client.searchByBloodType(searchBloodType_cbx.SelectedItem.ToString());
 
-                ServiceReference1.ServiceBloodCrowdClient client = new ServiceReference1.ServiceBloodCrowdClient();
-
-                Donor[] list_encontrados = client.searchByName(btn_SearchName.Text);
-                String[] coluna = null; int var_width = 70;
-
-                if (searchName_tb.Text != "")
-                {
-                    foreach (var var_dador in list_encontrados)
-                    {
-                        coluna = new string[] { var_dador.GivenName, var_dador.City, var_dador.EmailAddress, /*var_dador.Age.ToString(),*/ var_dador.BloodType, /*var_dador.getIMC().ToString(),*/ var_dador.Guid };
-                        var listviwItensViewItem = new ListViewItem(coluna);
-                        listView1.Items.Add(listviwItensViewItem);
-                    }
-                    listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-                    this.columnHeader3.Width = var_width;
-                    this.columnHeader4.Width = var_width;
-                }
-
-                /* if (searchName_tb.Text == "" || list_encontrados.Length == 0)
-                 {
-                     MessageBox.Show("Donor not found!");
-                     List<Donor> newDador = client.GetDadoresResumo();
-                     foreach (var var_dador in newDador)
-                     {
-                         coluna = new string[] { var_dador.GivenName, var_dador.City, var_dador.EmailAddress, var_dador.Age.ToString(), var_dador.BloodType, var_dador.getIMC().ToString(), var_dador.Guid };
-                         var listviwItensViewItem = new ListViewItem(coluna);
-                         listView1.Items.Add(listviwItensViewItem);
-                     }
-                     listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-                     this.columnHeader3.Width = var_width;
-                     this.columnHeader4.Width = var_width;
-                 }
-                 */
+            foreach (var var_dador in listDonor)
+            {
+                String[] coluna = { var_dador.GivenName, var_dador.City, var_dador.EmailAddress, /*var_dador.Age.ToString(),*/ var_dador.BloodType, /*var_dador.getIMC().ToString(),*/ var_dador.Guid };
+                var listviwItensViewItem = new ListViewItem(coluna);
+                listView1.Items.Add(listviwItensViewItem);
             }
-        
+            //listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            //this.columnHeader3.Width = var_width;
+            //this.columnHeader4.Width = var_width;
+        }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
+        //Método para abrir o formulário Form_NewDonor
+        private void btn_AddDonor_Click(object sender, EventArgs e)
+        {
+            if (valida == 0)
+            {
+                MessageBox.Show("The data was not loaded." + "\n" +  "Maybe there is a problem connecting to the webserver.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Form_NewDonor add = new Form_NewDonor();
+                if (add.ShowDialog() == DialogResult.OK)
+                {
+                    listView1.Refresh();
+                }
+            }
+        }
+
+        private void asXMLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        
+
     }
 }

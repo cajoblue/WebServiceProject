@@ -23,6 +23,9 @@ namespace WindowsFormsApp1.ServiceReference1 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int AgeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime BirthdayField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -48,6 +51,9 @@ namespace WindowsFormsApp1.ServiceReference1 {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string GuidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double ImcField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double KilogramsField;
@@ -98,6 +104,19 @@ namespace WindowsFormsApp1.ServiceReference1 {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Age {
+            get {
+                return this.AgeField;
+            }
+            set {
+                if ((this.AgeField.Equals(value) != true)) {
+                    this.AgeField = value;
+                    this.RaisePropertyChanged("Age");
+                }
             }
         }
         
@@ -214,6 +233,19 @@ namespace WindowsFormsApp1.ServiceReference1 {
                 if ((object.ReferenceEquals(this.GuidField, value) != true)) {
                     this.GuidField = value;
                     this.RaisePropertyChanged("Guid");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Imc {
+            get {
+                return this.ImcField;
+            }
+            set {
+                if ((this.ImcField.Equals(value) != true)) {
+                    this.ImcField = value;
+                    this.RaisePropertyChanged("Imc");
                 }
             }
         }
@@ -425,6 +457,18 @@ namespace WindowsFormsApp1.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBloodCrowd/searchByName", ReplyAction="http://tempuri.org/IServiceBloodCrowd/searchByNameResponse")]
         System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference1.Donor[]> searchByNameAsync(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBloodCrowd/searchByBloodType", ReplyAction="http://tempuri.org/IServiceBloodCrowd/searchByBloodTypeResponse")]
+        WindowsFormsApp1.ServiceReference1.Donor[] searchByBloodType(string sh_blood);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBloodCrowd/searchByBloodType", ReplyAction="http://tempuri.org/IServiceBloodCrowd/searchByBloodTypeResponse")]
+        System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference1.Donor[]> searchByBloodTypeAsync(string sh_blood);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBloodCrowd/addDador", ReplyAction="http://tempuri.org/IServiceBloodCrowd/addDadorResponse")]
+        bool addDador(WindowsFormsApp1.ServiceReference1.Donor newDonor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBloodCrowd/addDador", ReplyAction="http://tempuri.org/IServiceBloodCrowd/addDadorResponse")]
+        System.Threading.Tasks.Task<bool> addDadorAsync(WindowsFormsApp1.ServiceReference1.Donor newDonor);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -468,6 +512,22 @@ namespace WindowsFormsApp1.ServiceReference1 {
         
         public System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference1.Donor[]> searchByNameAsync(string name) {
             return base.Channel.searchByNameAsync(name);
+        }
+        
+        public WindowsFormsApp1.ServiceReference1.Donor[] searchByBloodType(string sh_blood) {
+            return base.Channel.searchByBloodType(sh_blood);
+        }
+        
+        public System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference1.Donor[]> searchByBloodTypeAsync(string sh_blood) {
+            return base.Channel.searchByBloodTypeAsync(sh_blood);
+        }
+        
+        public bool addDador(WindowsFormsApp1.ServiceReference1.Donor newDonor) {
+            return base.Channel.addDador(newDonor);
+        }
+        
+        public System.Threading.Tasks.Task<bool> addDadorAsync(WindowsFormsApp1.ServiceReference1.Donor newDonor) {
+            return base.Channel.addDadorAsync(newDonor);
         }
     }
 }

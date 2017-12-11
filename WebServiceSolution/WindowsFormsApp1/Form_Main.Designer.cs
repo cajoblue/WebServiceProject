@@ -84,7 +84,7 @@
             this.listView1.HoverSelection = true;
             this.listView1.Location = new System.Drawing.Point(0, 27);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(759, 425);
+            this.listView1.Size = new System.Drawing.Size(809, 425);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -93,30 +93,37 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "GivenName";
+            this.columnHeader1.Width = 90;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "City";
+            this.columnHeader2.Width = 140;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Email";
+            this.columnHeader3.Width = 215;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Age";
+            this.columnHeader4.Width = 40;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "BloodType";
+            this.columnHeader5.Width = 40;
             // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "IMC";
+            this.columnHeader6.Width = 40;
             // 
             // columnHeader7
             // 
             this.columnHeader7.Text = "GUID";
+            this.columnHeader7.Width = 220;
             // 
             // menuStrip1
             // 
@@ -125,7 +132,7 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1092, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1144, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -150,6 +157,7 @@
             this.asXMLToolStripMenuItem.Name = "asXMLToolStripMenuItem";
             this.asXMLToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.asXMLToolStripMenuItem.Text = "As XML";
+            this.asXMLToolStripMenuItem.Click += new System.EventHandler(this.asXMLToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -172,7 +180,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(774, 27);
+            this.groupBox1.Location = new System.Drawing.Point(825, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(303, 241);
             this.groupBox1.TabIndex = 4;
@@ -237,6 +245,7 @@
             this.searchBloodType_cbx.Name = "searchBloodType_cbx";
             this.searchBloodType_cbx.Size = new System.Drawing.Size(157, 21);
             this.searchBloodType_cbx.TabIndex = 8;
+            this.searchBloodType_cbx.SelectedIndexChanged += new System.EventHandler(this.searchBloodType_cbx_SelectedIndexChanged);
             // 
             // searchName_tb
             // 
@@ -296,7 +305,7 @@
             this.groupBox2.Controls.Add(this.btn_AddDonor);
             this.groupBox2.Controls.Add(this.btn_DeleteDonor);
             this.groupBox2.Controls.Add(this.btn_DonorDetails);
-            this.groupBox2.Location = new System.Drawing.Point(774, 283);
+            this.groupBox2.Location = new System.Drawing.Point(825, 283);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(303, 144);
             this.groupBox2.TabIndex = 5;
@@ -320,6 +329,7 @@
             this.btn_AddDonor.TabIndex = 2;
             this.btn_AddDonor.Text = "Add donor";
             this.btn_AddDonor.UseVisualStyleBackColor = true;
+            this.btn_AddDonor.Click += new System.EventHandler(this.btn_AddDonor_Click);
             // 
             // btn_DeleteDonor
             // 
@@ -343,7 +353,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1092, 449);
+            this.ClientSize = new System.Drawing.Size(1144, 449);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.listView1);

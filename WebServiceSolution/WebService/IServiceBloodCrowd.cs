@@ -25,6 +25,17 @@ namespace WebService
         [Description("Gets the Donors from the XML by name.")]
         List<Donor> searchByName(string name);
 
+        //Listar dadores de sangue pelo tipo sanguíneo.
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "/searchByBloodType?donorBloodType={sh_blood}")]
+        [Description("Gets the Donors from the XML by bloodtype.")]
+        List<Donor> searchByBloodType(string sh_blood);
+
+        //Adicionar novo dador.
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/newDonor")]
+        [Description("Adds a Donor to the XML File.")]
+        bool addDador(Donor newDonor);
     }
 
     [DataContract]
@@ -54,13 +65,15 @@ namespace WebService
         private string guid;
         private double latitude;
         private double longitude;
+        private double imc;
 
         public Donor(int number, string gender, string givenName, string surname, string streetAddress, string city,
             string stateFull, string zipCode, string emailAddress, string username, string password,
             int telephoneNumber, string mothersMaiden, DateTime birthday, int age, string occupation, string company,
             string vehicle, string bloodType, double kilograms, int centimeters, string guid, double latitude,
-            double longitude)
+            double longitude, double imc)
         {
+            this.Imc = imc;
             this.Number = number;
             this.Gender = gender;
             this.GivenName = givenName;
@@ -248,67 +261,43 @@ namespace WebService
             set => longitude = value;
         }
 
-           /*     
         [DataMember]
-        public double GetIMC
-
+        public double Imc
         {
-            get
-            {
-                var var_vazia = 0.0;
-                double imc = var_vazia;
-                double altura_m = Centimeters / (double)100;
-                imc = kilograms / (altura_m * altura_m);
-                imc = Math.Round(imc, 2);
-
-                return imc;
-            }
-        }
-        
-        
-
-        public override string ToString()
-        {
-            StringBuilder builder = new StringBuilder();
-            builder.Append("Number").Append(Number).Append("Gender").Append(Gender).Append("Givename").Append(GivenName)
-                .Append("Surname").Append(Surname).Append("Street Address").Append(StreetAddress).Append("City")
-                .Append(City)
-                .Append("StateFull").Append(StateFull).Append("ZipCode").Append(ZipCode).Append("Email Address")
-                .Append(EmailAddress)
-                .Append("Username").Append(Username).Append("Password").Append(Password).Append("Telephone Number")
-                .Append(TelephoneNumber)
-                .Append("Mothers Maiden").Append(MothersMaiden).Append("Birthday").Append(Birthday).Append("Age")
-                .Append(Age)
-                .Append("Occupation").Append(Occupation).Append("Company").Append(Company).Append("Vehicle")
-                .Append(Vehicle)
-                .Append("BloodType").Append(BloodType).Append("Kilograms").Append(Kilograms).Append("Centimeters")
-                .Append(Centimeters)
-                .Append("GUID").Append(Guid).Append("Latitude").Append(Latitude).Append("Longitude").Append(Longitude);
-
-            return builder.ToString();
+            get => imc;
+            set => imc = value;
         }
 
-        // Use a data contract as illustrated in the sample below to add composite types to service operations.
-    }
-
-    [DataContract]
-    public class DadosExtra
-    {
         [DataMember]
         public int Age
         {
-            get
-            {
-                int age;
-                DateTime today = DateTime.Today;
-                age = today.Year - birthday.Year;
-                if (birthday.DayOfYear < today.DayOfYear)
-                {
-                    age -= 1;
-                }
-                return age;
-            }
-        }*/
-    }
+            get => age;
+            set => age = value;
+        }
 
+        /*
+     public override string ToString()
+     {
+         StringBuilder builder = new StringBuilder();
+         builder.Append("Number").Append(Number).Append("Gender").Append(Gender).Append("Givename").Append(GivenName)
+             .Append("Surname").Append(Surname).Append("Street Address").Append(StreetAddress).Append("City")
+             .Append(City)
+             .Append("StateFull").Append(StateFull).Append("ZipCode").Append(ZipCode).Append("Email Address")
+             .Append(EmailAddress)
+             .Append("Username").Append(Username).Append("Password").Append(Password).Append("Telephone Number")
+             .Append(TelephoneNumber)
+             .Append("Mothers Maiden").Append(MothersMaiden).Append("Birthday").Append(Birthday).Append("Age")
+             .Append(Age)
+             .Append("Occupation").Append(Occupation).Append("Company").Append(Company).Append("Vehicle")
+             .Append(Vehicle)
+             .Append("BloodType").Append(BloodType).Append("Kilograms").Append(Kilograms).Append("Centimeters")
+             .Append(Centimeters)
+             .Append("GUID").Append(Guid).Append("Latitude").Append(Latitude).Append("Longitude").Append(Longitude);
+
+         return builder.ToString();
+     }
+
+     // Use a data contract as illustrated in the sample below to add composite types to service operations.
+ }*/
+    }
 }

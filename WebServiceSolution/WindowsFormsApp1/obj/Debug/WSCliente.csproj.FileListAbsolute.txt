@@ -18,3 +18,4 @@ C:\Users\DG\source\GitHub\WebServiceProject\WebServiceSolution\WindowsFormsApp1\
 C:\Users\DG\source\GitHub\WebServiceProject\WebServiceSolution\WindowsFormsApp1\obj\Debug\WSCliente.csproj.CoreCompileInputs.cache
 C:\Users\DG\source\GitHub\WebServiceProject\WebServiceSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\DG\source\GitHub\WebServiceProject\WebServiceSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\DG\source\GitHub\WebServiceProject\WebServiceSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form_NewDonor.resources
