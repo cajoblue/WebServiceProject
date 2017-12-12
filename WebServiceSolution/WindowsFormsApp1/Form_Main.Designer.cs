@@ -164,6 +164,7 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -219,6 +220,7 @@
             this.btn_SearchAge.TabIndex = 11;
             this.btn_SearchAge.Text = "Search";
             this.btn_SearchAge.UseVisualStyleBackColor = true;
+            this.btn_SearchAge.Click += new System.EventHandler(this.btn_SearchAge_Click);
             // 
             // btn_SearchName
             // 
@@ -232,14 +234,17 @@
             // 
             // searchBloodComp_cbx
             // 
+            this.searchBloodComp_cbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.searchBloodComp_cbx.FormattingEnabled = true;
             this.searchBloodComp_cbx.Location = new System.Drawing.Point(132, 200);
             this.searchBloodComp_cbx.Name = "searchBloodComp_cbx";
             this.searchBloodComp_cbx.Size = new System.Drawing.Size(157, 21);
             this.searchBloodComp_cbx.TabIndex = 9;
+            this.searchBloodComp_cbx.SelectedIndexChanged += new System.EventHandler(this.searchBloodComp_cbx_SelectedIndexChanged);
             // 
             // searchBloodType_cbx
             // 
+            this.searchBloodType_cbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.searchBloodType_cbx.FormattingEnabled = true;
             this.searchBloodType_cbx.Location = new System.Drawing.Point(132, 159);
             this.searchBloodType_cbx.Name = "searchBloodType_cbx";

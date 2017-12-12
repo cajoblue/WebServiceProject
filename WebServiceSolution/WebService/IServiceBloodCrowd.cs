@@ -31,6 +31,18 @@ namespace WebService
         [Description("Gets the Donors from the XML by bloodtype.")]
         List<Donor> searchByBloodType(string sh_blood);
 
+        //Lista os tipos sanguíneos existentes com o inserido.
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "/getBloodTypes")]
+        [Description("Gets a list of bloodtypes.")]
+        List<string> getBloodTypes();
+
+        //Listar dadores compatíveis com um determinado grupo sanguíneo.
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "/GetDonorsByCompBlood?donorBloodTypeComp={bloodType}")]
+        [Description("Gets a list of bloodtypes compatibles.")]
+        List<Donor> GetDonorsByCompBlood(string bloodType);
+
         //Adicionar novo dador.
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/newDonor")]

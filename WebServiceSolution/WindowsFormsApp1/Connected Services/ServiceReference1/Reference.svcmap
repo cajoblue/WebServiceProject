@@ -22,11 +22,12 @@
     <MetadataSource Address="http://localhost:65166/ServiceBloodCrowd.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ServiceBloodCrowd.xsd" MetadataType="Schema" ID="07863fb8-89ba-47ac-996a-abeb6f7409ef" SourceId="1" SourceUrl="http://localhost:65166/ServiceBloodCrowd.svc?xsd=xsd0" />
-    <MetadataFile FileName="ServiceBloodCrowd1.xsd" MetadataType="Schema" ID="8db8496c-0d75-4623-a1b9-ffbc8cf9995f" SourceId="1" SourceUrl="http://localhost:65166/ServiceBloodCrowd.svc?xsd=xsd2" />
     <MetadataFile FileName="ServiceBloodCrowd.wsdl" MetadataType="Wsdl" ID="5cb44e24-49a9-4861-a22a-87af3be58122" SourceId="1" SourceUrl="http://localhost:65166/ServiceBloodCrowd.svc?wsdl" />
-    <MetadataFile FileName="ServiceBloodCrowd.disco" MetadataType="Disco" ID="490ba29a-3fd5-4dbd-8b96-846ae4095529" SourceId="1" SourceUrl="http://localhost:65166/ServiceBloodCrowd.svc?disco" />
+    <MetadataFile FileName="ServiceBloodCrowd1.xsd" MetadataType="Schema" ID="8db8496c-0d75-4623-a1b9-ffbc8cf9995f" SourceId="1" SourceUrl="http://localhost:65166/ServiceBloodCrowd.svc?xsd=xsd2" />
     <MetadataFile FileName="ServiceBloodCrowd2.xsd" MetadataType="Schema" ID="57bcbdde-184e-476c-a77e-a0b0bc7ab9c0" SourceId="1" SourceUrl="http://localhost:65166/ServiceBloodCrowd.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceBloodCrowd.xsd" MetadataType="Schema" ID="07863fb8-89ba-47ac-996a-abeb6f7409ef" SourceId="1" SourceUrl="http://localhost:65166/ServiceBloodCrowd.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceBloodCrowd3.xsd" MetadataType="Schema" ID="fbc645f9-0f4b-474d-bdd2-c0ff2c987cb3" SourceId="1" SourceUrl="http://localhost:65166/ServiceBloodCrowd.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServiceBloodCrowd.disco" MetadataType="Disco" ID="490ba29a-3fd5-4dbd-8b96-846ae4095529" SourceId="1" SourceUrl="http://localhost:65166/ServiceBloodCrowd.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

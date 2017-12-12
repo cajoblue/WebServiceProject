@@ -464,6 +464,18 @@ namespace WindowsFormsApp1.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBloodCrowd/searchByBloodType", ReplyAction="http://tempuri.org/IServiceBloodCrowd/searchByBloodTypeResponse")]
         System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference1.Donor[]> searchByBloodTypeAsync(string sh_blood);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBloodCrowd/getBloodTypes", ReplyAction="http://tempuri.org/IServiceBloodCrowd/getBloodTypesResponse")]
+        string[] getBloodTypes();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBloodCrowd/getBloodTypes", ReplyAction="http://tempuri.org/IServiceBloodCrowd/getBloodTypesResponse")]
+        System.Threading.Tasks.Task<string[]> getBloodTypesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBloodCrowd/GetDonorsByCompBlood", ReplyAction="http://tempuri.org/IServiceBloodCrowd/GetDonorsByCompBloodResponse")]
+        WindowsFormsApp1.ServiceReference1.Donor[] GetDonorsByCompBlood(string bloodType);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBloodCrowd/GetDonorsByCompBlood", ReplyAction="http://tempuri.org/IServiceBloodCrowd/GetDonorsByCompBloodResponse")]
+        System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference1.Donor[]> GetDonorsByCompBloodAsync(string bloodType);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceBloodCrowd/addDador", ReplyAction="http://tempuri.org/IServiceBloodCrowd/addDadorResponse")]
         bool addDador(WindowsFormsApp1.ServiceReference1.Donor newDonor);
         
@@ -520,6 +532,22 @@ namespace WindowsFormsApp1.ServiceReference1 {
         
         public System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference1.Donor[]> searchByBloodTypeAsync(string sh_blood) {
             return base.Channel.searchByBloodTypeAsync(sh_blood);
+        }
+        
+        public string[] getBloodTypes() {
+            return base.Channel.getBloodTypes();
+        }
+        
+        public System.Threading.Tasks.Task<string[]> getBloodTypesAsync() {
+            return base.Channel.getBloodTypesAsync();
+        }
+        
+        public WindowsFormsApp1.ServiceReference1.Donor[] GetDonorsByCompBlood(string bloodType) {
+            return base.Channel.GetDonorsByCompBlood(bloodType);
+        }
+        
+        public System.Threading.Tasks.Task<WindowsFormsApp1.ServiceReference1.Donor[]> GetDonorsByCompBloodAsync(string bloodType) {
+            return base.Channel.GetDonorsByCompBloodAsync(bloodType);
         }
         
         public bool addDador(WindowsFormsApp1.ServiceReference1.Donor newDonor) {

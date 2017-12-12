@@ -17,11 +17,14 @@ namespace WindowsFormsApp1
     {
         public int valida = 0;
         public ServiceReference1.ServiceBloodCrowdClient client = new ServiceReference1.ServiceBloodCrowdClient();
-
+        
         public Form_Main()
         {
             InitializeComponent();
             valida += 1;
+            searchBloodType_cbx.Items.AddRange(client.getBloodTypes().ToArray());
+            searchBloodComp_cbx.Items.AddRange(client.getBloodTypes().ToArray());
+
             //Listar dadores quando o form principal é carregado.
             foreach (var var_dador in client.GetDonors())
             {
@@ -37,8 +40,13 @@ namespace WindowsFormsApp1
         //Botão pesquisar dador pelo Name.
         private void btn_SearchName_Click(object sender, EventArgs e)
         {
-            //int var_width = 70;
-            listView1.Items.Clear();
+            if (valida == 0)
+            {
+                MessageBox.Show("Escrever mensagem btn_SearchName_Click");
+            }
+            else
+                //int var_width = 70;
+                listView1.Items.Clear();
             Donor[] listDonor = client.searchByName(searchName_tb.Text);
             
             foreach (var var_dador in listDonor)
@@ -68,6 +76,11 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void btn_SearchAge_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         //ComboBox pesquisar pelo BloodType
         private void searchBloodType_cbx_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -77,7 +90,23 @@ namespace WindowsFormsApp1
 
             foreach (var var_dador in listDonor)
             {
-                String[] coluna = { var_dador.GivenName, var_dador.City, var_dador.EmailAddress, /*var_dador.Age.ToString(),*/ var_dador.BloodType, /*var_dador.getIMC().ToString(),*/ var_dador.Guid };
+                String[] coluna = { var_dador.GivenName, var_dador.City, var_dador.EmailAddress, var_dador.Age.ToString(), var_dador.BloodType, var_dador.Imc.ToString(), var_dador.Guid };
+                var listviwItensViewItem = new ListViewItem(coluna);
+                listView1.Items.Add(listviwItensViewItem);
+            }
+            //listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            //this.columnHeader3.Width = var_width;
+            //this.columnHeader4.Width = var_width;
+        }
+
+        private void searchBloodComp_cbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
+            //int var_width = 70;
+            Donor[] list_encontrados = client.GetDonorsByCompBlood(searchBloodComp_cbx.SelectedItem.ToString());
+            foreach (var var_dador in list_encontrados)
+            {
+                String[] coluna = { var_dador.GivenName, var_dador.City, var_dador.EmailAddress, var_dador.Age.ToString(), var_dador.BloodType, var_dador.Imc.ToString(), var_dador.Guid };
                 var listviwItensViewItem = new ListViewItem(coluna);
                 listView1.Items.Add(listviwItensViewItem);
             }
@@ -113,7 +142,10 @@ namespace WindowsFormsApp1
             
         }
 
-        
-
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Project: BloodCrowd Application & WebServer" + "\n" + "Students: Diogo Gaspar (5170277) and Celso Teixeira (5151804)" +
+                             "\n" + "Class: Integration of Systems Information" + "\n" + "Year: 2017");
+        }
     }
 }

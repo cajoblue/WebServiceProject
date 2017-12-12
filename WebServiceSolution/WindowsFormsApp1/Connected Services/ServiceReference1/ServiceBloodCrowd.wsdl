@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:65166/ServiceBloodCrowd.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:65166/ServiceBloodCrowd.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:65166/ServiceBloodCrowd.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WebService" />
+      <xsd:import schemaLocation="http://localhost:65166/ServiceBloodCrowd.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IServiceBloodCrowd_GetDonors_InputMessage">
@@ -25,6 +26,18 @@
   <wsdl:message name="IServiceBloodCrowd_searchByBloodType_OutputMessage">
     <wsdl:part name="parameters" element="tns:searchByBloodTypeResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceBloodCrowd_getBloodTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:getBloodTypes" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBloodCrowd_getBloodTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getBloodTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBloodCrowd_GetDonorsByCompBlood_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDonorsByCompBlood" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBloodCrowd_GetDonorsByCompBlood_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDonorsByCompBloodResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceBloodCrowd_addDador_InputMessage">
     <wsdl:part name="parameters" element="tns:addDador" />
   </wsdl:message>
@@ -43,6 +56,14 @@
     <wsdl:operation name="searchByBloodType">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceBloodCrowd/searchByBloodType" message="tns:IServiceBloodCrowd_searchByBloodType_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceBloodCrowd/searchByBloodTypeResponse" message="tns:IServiceBloodCrowd_searchByBloodType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getBloodTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBloodCrowd/getBloodTypes" message="tns:IServiceBloodCrowd_getBloodTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBloodCrowd/getBloodTypesResponse" message="tns:IServiceBloodCrowd_getBloodTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDonorsByCompBlood">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBloodCrowd/GetDonorsByCompBlood" message="tns:IServiceBloodCrowd_GetDonorsByCompBlood_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBloodCrowd/GetDonorsByCompBloodResponse" message="tns:IServiceBloodCrowd_GetDonorsByCompBlood_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="addDador">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceBloodCrowd/addDador" message="tns:IServiceBloodCrowd_addDador_InputMessage" />
@@ -71,6 +92,24 @@
     </wsdl:operation>
     <wsdl:operation name="searchByBloodType">
       <soap:operation soapAction="http://tempuri.org/IServiceBloodCrowd/searchByBloodType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBloodTypes">
+      <soap:operation soapAction="http://tempuri.org/IServiceBloodCrowd/getBloodTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDonorsByCompBlood">
+      <soap:operation soapAction="http://tempuri.org/IServiceBloodCrowd/GetDonorsByCompBlood" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

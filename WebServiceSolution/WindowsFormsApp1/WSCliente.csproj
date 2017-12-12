@@ -91,6 +91,9 @@
     <None Include="Connected Services\ServiceReference1\ServiceBloodCrowd2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ServiceReference1\ServiceBloodCrowd3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServiceReference1\WindowsFormsApp1.ServiceReference1.Donor.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

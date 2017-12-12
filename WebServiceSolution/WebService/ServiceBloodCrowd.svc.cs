@@ -18,6 +18,18 @@ namespace WebService
     {
         private static string FILEPATH;
 
+        public static Dictionary<String, List<String>> myDictionary = new Dictionary<string, List<string>>()
+        {
+            {"O-", new List<String>() {"O−", "O+", "A−", " A+", "B−", "B+", "AB−", "AB+"}},
+            {"O+", new List<String>() {"O+", "A+", "B+", "AB+"}},
+            {"A-", new List<String>() {"A-", "A+", "AB-", "AB+"}},
+            {"A+", new List<String>() {"A+", "AB+"}},
+            {"B-", new List<String>() {"B-", "B+", "AB-", "AB+"}},
+            {"B+", new List<String>() {"B+", "AB+"}},
+            {"AB-", new List<String>() {"AB-", "AB+"}},
+            {"AB+", new List<String>() {"AB+"}}
+        };
+
         public ServiceBloodCrowd()
         {
             FILEPATH = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "blooddonors.xml");
@@ -131,6 +143,12 @@ namespace WebService
             }
             return list_dadoresFounded;
         }
+        
+        //Devolve uma lista com os tipos de sangue.
+        public List<string> getBloodTypes()
+        {
+            return myDictionary.Keys.ToList();
+        }
 
         //Pesquisar dadores pelo tipo sanguíneo.
         public List<Donor> searchByBloodType(string sh_blood)
@@ -181,6 +199,18 @@ namespace WebService
             return list_dadoresFounded;
         }
 
+        //Devolve uma lista de dadores compatíveis com o selecionado na combobox.
+        public List<Donor> GetDonorsByCompBlood(string bloodType)
+        {
+            List<Donor> list_dadoresFounded = new List<Donor>();
+            List<string> bloodTypesComp = myDictionary[bloodType];
+            foreach (string var_bloodType in bloodTypesComp)
+            {                
+                list_dadoresFounded.AddRange(searchByBloodType(var_bloodType));
+            }
+            return list_dadoresFounded;
+        }
+        
         //Método para adicionar um novo dador.
         public bool addDador(Donor newDonor)
         {
