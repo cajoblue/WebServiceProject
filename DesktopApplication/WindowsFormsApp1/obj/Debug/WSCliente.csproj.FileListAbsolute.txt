@@ -1,0 +1,43 @@
+C:\Users\celsoTeixeira\Google Drive\FACULDADE\3ºano\1ºsemestre\Integracao de Sistemas de Informacao\Projeto\WebServiceSolution\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\celsoTeixeira\Google Drive\FACULDADE\3ºano\1ºsemestre\Integracao de Sistemas de Informacao\Projeto\WebServiceSolution\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\celsoTeixeira\Google Drive\FACULDADE\3ºano\1ºsemestre\Integracao de Sistemas de Informacao\Projeto\WebServiceSolution\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\celsoTeixeira\Google Drive\FACULDADE\3ºano\1ºsemestre\Integracao de Sistemas de Informacao\Projeto\WebServiceSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\celsoTeixeira\Google Drive\FACULDADE\3ºano\1ºsemestre\Integracao de Sistemas de Informacao\Projeto\WebServiceSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\celsoTeixeira\Google Drive\FACULDADE\3ºano\1ºsemestre\Integracao de Sistemas de Informacao\Projeto\WebServiceSolution\WindowsFormsApp1\obj\Debug\WSCliente.csproj.GenerateResource.Cache
+C:\Users\celsoTeixeira\Google Drive\FACULDADE\3ºano\1ºsemestre\Integracao de Sistemas de Informacao\Projeto\WebServiceSolution\WindowsFormsApp1\obj\Debug\WSCliente.csproj.CoreCompileInputs.cache
+C:\Users\celsoTeixeira\Google Drive\FACULDADE\3ºano\1ºsemestre\Integracao de Sistemas de Informacao\Projeto\WebServiceSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\celsoTeixeira\Google Drive\FACULDADE\3ºano\1ºsemestre\Integracao de Sistemas de Informacao\Projeto\WebServiceSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\celsoTeixeira\Google Drive\FACULDADE\3ºano\1ºsemestre\Integracao de Sistemas de Informacao\Projeto\WebServiceSolution\WindowsFormsApp1\obj\Debug\WSCliente.csprojResolveAssemblyReference.cache
+C:\Users\DG\source\GitHub\WebServiceProject\WebServiceSolution\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\DG\source\GitHub\WebServiceProject\WebServiceSolution\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\DG\source\GitHub\WebServiceProject\WebServiceSolution\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\DG\source\GitHub\WebServiceProject\WebServiceSolution\WindowsFormsApp1\obj\Debug\WSCliente.csprojResolveAssemblyReference.cache
+C:\Users\DG\source\GitHub\WebServiceProject\WebServiceSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form_Main.resources
+C:\Users\DG\source\GitHub\WebServiceProject\WebServiceSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\DG\source\GitHub\WebServiceProject\WebServiceSolution\WindowsFormsApp1\obj\Debug\WSCliente.csproj.GenerateResource.Cache
+C:\Users\DG\source\GitHub\WebServiceProject\WebServiceSolution\WindowsFormsApp1\obj\Debug\WSCliente.csproj.CoreCompileInputs.cache
+C:\Users\DG\source\GitHub\WebServiceProject\WebServiceSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\DG\source\GitHub\WebServiceProject\WebServiceSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\DG\source\GitHub\WebServiceProject\WebServiceSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form_NewDonor.resources
+D:\ProjetoIS\WebServiceProject\WebServiceSolution\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\ProjetoIS\WebServiceProject\WebServiceSolution\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\ProjetoIS\WebServiceProject\WebServiceSolution\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\ProjetoIS\WebServiceProject\WebServiceSolution\WindowsFormsApp1\obj\Debug\WSCliente.csprojResolveAssemblyReference.cache
+D:\ProjetoIS\WebServiceProject\WebServiceSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form_Main.resources
+D:\ProjetoIS\WebServiceProject\WebServiceSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form_NewDonor.resources
+D:\ProjetoIS\WebServiceProject\WebServiceSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\ProjetoIS\WebServiceProject\WebServiceSolution\WindowsFormsApp1\obj\Debug\WSCliente.csproj.GenerateResource.Cache
+D:\ProjetoIS\WebServiceProject\WebServiceSolution\WindowsFormsApp1\obj\Debug\WSCliente.csproj.CoreCompileInputs.cache
+D:\ProjetoIS\WebServiceProject\WebServiceSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\ProjetoIS\WebServiceProject\WebServiceSolution\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\ProjetoIS\DesktopApplication\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\ProjetoIS\DesktopApplication\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\ProjetoIS\DesktopApplication\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\ProjetoIS\DesktopApplication\WindowsFormsApp1\obj\Debug\WSCliente.csprojResolveAssemblyReference.cache
+D:\ProjetoIS\DesktopApplication\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form_Main.resources
+D:\ProjetoIS\DesktopApplication\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form_NewDonor.resources
+D:\ProjetoIS\DesktopApplication\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\ProjetoIS\DesktopApplication\WindowsFormsApp1\obj\Debug\WSCliente.csproj.GenerateResource.Cache
+D:\ProjetoIS\DesktopApplication\WindowsFormsApp1\obj\Debug\WSCliente.csproj.CoreCompileInputs.cache
+D:\ProjetoIS\DesktopApplication\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\ProjetoIS\DesktopApplication\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
