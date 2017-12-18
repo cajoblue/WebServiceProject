@@ -64,6 +64,12 @@
     <Compile Include="Form_NewDonor.Designer.cs">
       <DependentUpon>Form_NewDonor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_ShowDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ShowDetails.Designer.cs">
+      <DependentUpon>Form_ShowDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form_Main.resx">
@@ -71,6 +77,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_NewDonor.resx">
       <DependentUpon>Form_NewDonor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ShowDetails.resx">
+      <DependentUpon>Form_ShowDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

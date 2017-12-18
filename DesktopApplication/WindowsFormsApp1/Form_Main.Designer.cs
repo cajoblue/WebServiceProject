@@ -35,14 +35,17 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.searchImc_UpDown = new System.Windows.Forms.NumericUpDown();
+            this.maxIMC = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.minAge = new System.Windows.Forms.Label();
+            this.maxAge = new System.Windows.Forms.NumericUpDown();
+            this.minIMC = new System.Windows.Forms.NumericUpDown();
             this.searchAge_UpDown = new System.Windows.Forms.NumericUpDown();
             this.btn_SearchImc = new System.Windows.Forms.Button();
             this.btn_SearchAge = new System.Windows.Forms.Button();
@@ -62,7 +65,9 @@
             this.btn_DonorDetails = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchImc_UpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maxIMC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maxAge)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minIMC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchAge_UpDown)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -77,8 +82,7 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7});
+            this.columnHeader6});
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HoverSelection = true;
@@ -119,11 +123,6 @@
             // 
             this.columnHeader6.Text = "IMC";
             this.columnHeader6.Width = 40;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "GUID";
-            this.columnHeader7.Width = 220;
             // 
             // menuStrip1
             // 
@@ -168,7 +167,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.searchImc_UpDown);
+            this.groupBox1.Controls.Add(this.maxIMC);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.minAge);
+            this.groupBox1.Controls.Add(this.maxAge);
+            this.groupBox1.Controls.Add(this.minIMC);
             this.groupBox1.Controls.Add(this.searchAge_UpDown);
             this.groupBox1.Controls.Add(this.btn_SearchImc);
             this.groupBox1.Controls.Add(this.btn_SearchAge);
@@ -188,19 +191,52 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search donors by";
             // 
-            // searchImc_UpDown
+            // maxIMC
             // 
-            this.searchImc_UpDown.DecimalPlaces = 2;
-            this.searchImc_UpDown.Location = new System.Drawing.Point(53, 118);
-            this.searchImc_UpDown.Name = "searchImc_UpDown";
-            this.searchImc_UpDown.Size = new System.Drawing.Size(143, 20);
-            this.searchImc_UpDown.TabIndex = 14;
+            this.maxIMC.DecimalPlaces = 2;
+            this.maxIMC.Location = new System.Drawing.Point(146, 117);
+            this.maxIMC.Name = "maxIMC";
+            this.maxIMC.Size = new System.Drawing.Size(50, 20);
+            this.maxIMC.TabIndex = 18;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(143, 59);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(27, 13);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Max";
+            // 
+            // minAge
+            // 
+            this.minAge.AutoSize = true;
+            this.minAge.Location = new System.Drawing.Point(62, 61);
+            this.minAge.Name = "minAge";
+            this.minAge.Size = new System.Drawing.Size(24, 13);
+            this.minAge.TabIndex = 16;
+            this.minAge.Text = "Min";
+            // 
+            // maxAge
+            // 
+            this.maxAge.Location = new System.Drawing.Point(146, 76);
+            this.maxAge.Name = "maxAge";
+            this.maxAge.Size = new System.Drawing.Size(50, 20);
+            this.maxAge.TabIndex = 15;
+            // 
+            // minIMC
+            // 
+            this.minIMC.DecimalPlaces = 2;
+            this.minIMC.Location = new System.Drawing.Point(53, 118);
+            this.minIMC.Name = "minIMC";
+            this.minIMC.Size = new System.Drawing.Size(73, 20);
+            this.minIMC.TabIndex = 14;
             // 
             // searchAge_UpDown
             // 
             this.searchAge_UpDown.Location = new System.Drawing.Point(53, 77);
             this.searchAge_UpDown.Name = "searchAge_UpDown";
-            this.searchAge_UpDown.Size = new System.Drawing.Size(143, 20);
+            this.searchAge_UpDown.Size = new System.Drawing.Size(73, 20);
             this.searchAge_UpDown.TabIndex = 13;
             // 
             // btn_SearchImc
@@ -211,6 +247,7 @@
             this.btn_SearchImc.TabIndex = 12;
             this.btn_SearchImc.Text = "Search";
             this.btn_SearchImc.UseVisualStyleBackColor = true;
+            this.btn_SearchImc.Click += new System.EventHandler(this.btn_SearchImc_Click);
             // 
             // btn_SearchAge
             // 
@@ -325,6 +362,7 @@
             this.btn_UpdateList.TabIndex = 3;
             this.btn_UpdateList.Text = "Update list";
             this.btn_UpdateList.UseVisualStyleBackColor = true;
+            this.btn_UpdateList.Click += new System.EventHandler(this.btn_UpdateList_Click);
             // 
             // btn_AddDonor
             // 
@@ -344,6 +382,7 @@
             this.btn_DeleteDonor.TabIndex = 1;
             this.btn_DeleteDonor.Text = "Delete donor";
             this.btn_DeleteDonor.UseVisualStyleBackColor = true;
+            this.btn_DeleteDonor.Click += new System.EventHandler(this.btn_DeleteDonor_Click);
             // 
             // btn_DonorDetails
             // 
@@ -353,6 +392,7 @@
             this.btn_DonorDetails.TabIndex = 0;
             this.btn_DonorDetails.Text = "Donor details";
             this.btn_DonorDetails.UseVisualStyleBackColor = true;
+            this.btn_DonorDetails.Click += new System.EventHandler(this.btn_DonorDetails_Click);
             // 
             // Form_Main
             // 
@@ -370,7 +410,9 @@
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchImc_UpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maxIMC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.maxAge)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minIMC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchAge_UpDown)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -387,14 +429,13 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asXMLToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.NumericUpDown searchImc_UpDown;
+        private System.Windows.Forms.NumericUpDown minIMC;
         private System.Windows.Forms.NumericUpDown searchAge_UpDown;
         private System.Windows.Forms.Button btn_SearchImc;
         private System.Windows.Forms.Button btn_SearchAge;
@@ -412,6 +453,10 @@
         private System.Windows.Forms.Button btn_AddDonor;
         private System.Windows.Forms.Button btn_DeleteDonor;
         private System.Windows.Forms.Button btn_DonorDetails;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label minAge;
+        private System.Windows.Forms.NumericUpDown maxAge;
+        private System.Windows.Forms.NumericUpDown maxIMC;
     }
 }
 

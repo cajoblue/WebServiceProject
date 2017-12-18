@@ -41,3 +41,4 @@ D:\ProjetoIS\DesktopApplication\WindowsFormsApp1\obj\Debug\WSCliente.csproj.Gene
 D:\ProjetoIS\DesktopApplication\WindowsFormsApp1\obj\Debug\WSCliente.csproj.CoreCompileInputs.cache
 D:\ProjetoIS\DesktopApplication\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 D:\ProjetoIS\DesktopApplication\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\ProjetoIS\DesktopApplication\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form_ShowDetails.resources

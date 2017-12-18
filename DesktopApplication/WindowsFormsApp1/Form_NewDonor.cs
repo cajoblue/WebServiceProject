@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.ServiceReference1;
 
 namespace WindowsFormsApp1
 {
@@ -19,11 +20,12 @@ namespace WindowsFormsApp1
             InitializeComponent();
 
             //a linha abaixo é para ir buscar os tipos sanguíneos ao dicionário
-            //bloodType_cbx.Items.AddRange(controller.getListBloodType().ToArray());
+            bloodType_cbx.Items.AddRange(client.getBloodTypes().ToArray());
             gender_cbx.Items.Add("Female");
             gender_cbx.Items.Add("Male");
             string NewGUID = System.Guid.NewGuid().ToString();
             guid_textBox.Text = NewGUID;
+
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)
@@ -33,6 +35,8 @@ namespace WindowsFormsApp1
 
         private void btn_save_Click(object sender, EventArgs e)
         {
+
+
             int phone_number;
             int.TryParse(phone_tb.Text, out phone_number);
             DateTime birthDate;
@@ -187,13 +191,44 @@ namespace WindowsFormsApp1
 
             if (error == false)
             {
-                /*Dador newDador = new Dador(0, gender_textBox.Text, givinNAme_textBox.Text, surname_textBox.Text, address_textBox.Text, city_textBox.Text,
-                state_textBox.Text, zip_textBox.Text, email_textBox.Text, username_textBox.Text, pass_textBox.Text, phone_number, maiden_textBox.Text, birthDate,
-                0, occupation_textBox.Text, company_textBox.Text, vehicle_textBox.Text, bloodType_comboBox.Text, kG, centimetros, guid_textBox.Text, lat, longt);
+                Donor newDonor = new Donor();
 
-                client.addDador(newDador);*/
-                MessageBox.Show("Donor saved successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                newDonor.Number = 0;
+                newDonor.Gender = gender_cbx.Text;
+                newDonor.Birthday = birthDate;
+                newDonor.BloodType = bloodType_cbx.Text;
+                newDonor.Centimeters = centimetros;
+                newDonor.Kilograms = kG;
+                newDonor.Guid = guid_textBox.Text;
+                newDonor.Latitude = longt;
+                newDonor.Longitude = lat;
+                newDonor.MothersMaiden = mothersMaiden_tb.Text;
+                newDonor.Password = password_tb.Text;
+                newDonor.StateFull = state_tb.Text;
+                newDonor.StreetAddress = address_tb.Text;
+                newDonor.Surname = surname_tb.Text;
+                newDonor.TelephoneNumber = phone_number;
+                newDonor.Vehicle = vehicle_tb.Text;
+                newDonor.ZipCode = zipCode_tb.Text;
+                newDonor.EmailAddress = email_tb.Text;
+                newDonor.GivenName = givenName_tb.Text;
+                newDonor.City = city_tb.Text;
+                newDonor.Username = username_tb.Text;
+                newDonor.Occupation = occupation_tb.Text;
+                newDonor.Company = company_tb.Text;
+                newDonor.Imc = client.CalculateIMC(kG, centimetros);
+                newDonor.Age = client.CalculateAge(birthDate);
+
+                bool valida = client.addDonor(newDonor);
+                if (valida)
+                {
+                    MessageBox.Show("Donor saved successfully!");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Process failed!" + "\nTry again!");                    
+                }                
             }
             else
             {

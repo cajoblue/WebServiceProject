@@ -14,17 +14,17 @@
   <wsdl:message name="IServiceBloodCrowd_GetDonors_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDonorsResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceBloodCrowd_searchByName_InputMessage">
-    <wsdl:part name="parameters" element="tns:searchByName" />
+  <wsdl:message name="IServiceBloodCrowd_GetDonorsByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDonorsByName" />
   </wsdl:message>
-  <wsdl:message name="IServiceBloodCrowd_searchByName_OutputMessage">
-    <wsdl:part name="parameters" element="tns:searchByNameResponse" />
+  <wsdl:message name="IServiceBloodCrowd_GetDonorsByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDonorsByNameResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceBloodCrowd_searchByBloodType_InputMessage">
-    <wsdl:part name="parameters" element="tns:searchByBloodType" />
+  <wsdl:message name="IServiceBloodCrowd_GetDonorsByBloodType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDonorsByBloodType" />
   </wsdl:message>
-  <wsdl:message name="IServiceBloodCrowd_searchByBloodType_OutputMessage">
-    <wsdl:part name="parameters" element="tns:searchByBloodTypeResponse" />
+  <wsdl:message name="IServiceBloodCrowd_GetDonorsByBloodType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDonorsByBloodTypeResponse" />
   </wsdl:message>
   <wsdl:message name="IServiceBloodCrowd_getBloodTypes_InputMessage">
     <wsdl:part name="parameters" element="tns:getBloodTypes" />
@@ -38,24 +38,60 @@
   <wsdl:message name="IServiceBloodCrowd_GetDonorsByCompBlood_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDonorsByCompBloodResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceBloodCrowd_addDador_InputMessage">
-    <wsdl:part name="parameters" element="tns:addDador" />
+  <wsdl:message name="IServiceBloodCrowd_GetDonorsByAge_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDonorsByAge" />
   </wsdl:message>
-  <wsdl:message name="IServiceBloodCrowd_addDador_OutputMessage">
-    <wsdl:part name="parameters" element="tns:addDadorResponse" />
+  <wsdl:message name="IServiceBloodCrowd_GetDonorsByAge_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDonorsByAgeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBloodCrowd_GetDonorsByIMC_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDonorsByIMC" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBloodCrowd_GetDonorsByIMC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDonorsByIMCResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBloodCrowd_addDonor_InputMessage">
+    <wsdl:part name="parameters" element="tns:addDonor" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBloodCrowd_addDonor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addDonorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBloodCrowd_ExportToXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExportToXml" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBloodCrowd_ExportToXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExportToXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBloodCrowd_CalculateIMC_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateIMC" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBloodCrowd_CalculateIMC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateIMCResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBloodCrowd_CalculateAge_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateAge" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBloodCrowd_CalculateAge_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateAgeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBloodCrowd_RemoveDonor_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveDonor" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBloodCrowd_RemoveDonor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveDonorResponse" />
   </wsdl:message>
   <wsdl:portType name="IServiceBloodCrowd">
     <wsdl:operation name="GetDonors">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceBloodCrowd/GetDonors" message="tns:IServiceBloodCrowd_GetDonors_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceBloodCrowd/GetDonorsResponse" message="tns:IServiceBloodCrowd_GetDonors_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="searchByName">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBloodCrowd/searchByName" message="tns:IServiceBloodCrowd_searchByName_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBloodCrowd/searchByNameResponse" message="tns:IServiceBloodCrowd_searchByName_OutputMessage" />
+    <wsdl:operation name="GetDonorsByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBloodCrowd/GetDonorsByName" message="tns:IServiceBloodCrowd_GetDonorsByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBloodCrowd/GetDonorsByNameResponse" message="tns:IServiceBloodCrowd_GetDonorsByName_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="searchByBloodType">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBloodCrowd/searchByBloodType" message="tns:IServiceBloodCrowd_searchByBloodType_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBloodCrowd/searchByBloodTypeResponse" message="tns:IServiceBloodCrowd_searchByBloodType_OutputMessage" />
+    <wsdl:operation name="GetDonorsByBloodType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBloodCrowd/GetDonorsByBloodType" message="tns:IServiceBloodCrowd_GetDonorsByBloodType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBloodCrowd/GetDonorsByBloodTypeResponse" message="tns:IServiceBloodCrowd_GetDonorsByBloodType_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getBloodTypes">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceBloodCrowd/getBloodTypes" message="tns:IServiceBloodCrowd_getBloodTypes_InputMessage" />
@@ -65,9 +101,33 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceBloodCrowd/GetDonorsByCompBlood" message="tns:IServiceBloodCrowd_GetDonorsByCompBlood_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceBloodCrowd/GetDonorsByCompBloodResponse" message="tns:IServiceBloodCrowd_GetDonorsByCompBlood_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="addDador">
-      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBloodCrowd/addDador" message="tns:IServiceBloodCrowd_addDador_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBloodCrowd/addDadorResponse" message="tns:IServiceBloodCrowd_addDador_OutputMessage" />
+    <wsdl:operation name="GetDonorsByAge">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBloodCrowd/GetDonorsByAge" message="tns:IServiceBloodCrowd_GetDonorsByAge_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBloodCrowd/GetDonorsByAgeResponse" message="tns:IServiceBloodCrowd_GetDonorsByAge_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDonorsByIMC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBloodCrowd/GetDonorsByIMC" message="tns:IServiceBloodCrowd_GetDonorsByIMC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBloodCrowd/GetDonorsByIMCResponse" message="tns:IServiceBloodCrowd_GetDonorsByIMC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addDonor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBloodCrowd/addDonor" message="tns:IServiceBloodCrowd_addDonor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBloodCrowd/addDonorResponse" message="tns:IServiceBloodCrowd_addDonor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExportToXml">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBloodCrowd/ExportToXml" message="tns:IServiceBloodCrowd_ExportToXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBloodCrowd/ExportToXmlResponse" message="tns:IServiceBloodCrowd_ExportToXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateIMC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBloodCrowd/CalculateIMC" message="tns:IServiceBloodCrowd_CalculateIMC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBloodCrowd/CalculateIMCResponse" message="tns:IServiceBloodCrowd_CalculateIMC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateAge">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBloodCrowd/CalculateAge" message="tns:IServiceBloodCrowd_CalculateAge_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBloodCrowd/CalculateAgeResponse" message="tns:IServiceBloodCrowd_CalculateAge_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDonor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBloodCrowd/RemoveDonor" message="tns:IServiceBloodCrowd_RemoveDonor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBloodCrowd/RemoveDonorResponse" message="tns:IServiceBloodCrowd_RemoveDonor_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServiceBloodCrowd" type="tns:IServiceBloodCrowd">
@@ -81,8 +141,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="searchByName">
-      <soap:operation soapAction="http://tempuri.org/IServiceBloodCrowd/searchByName" style="document" />
+    <wsdl:operation name="GetDonorsByName">
+      <soap:operation soapAction="http://tempuri.org/IServiceBloodCrowd/GetDonorsByName" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -90,8 +150,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="searchByBloodType">
-      <soap:operation soapAction="http://tempuri.org/IServiceBloodCrowd/searchByBloodType" style="document" />
+    <wsdl:operation name="GetDonorsByBloodType">
+      <soap:operation soapAction="http://tempuri.org/IServiceBloodCrowd/GetDonorsByBloodType" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -117,8 +177,62 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="addDador">
-      <soap:operation soapAction="http://tempuri.org/IServiceBloodCrowd/addDador" style="document" />
+    <wsdl:operation name="GetDonorsByAge">
+      <soap:operation soapAction="http://tempuri.org/IServiceBloodCrowd/GetDonorsByAge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDonorsByIMC">
+      <soap:operation soapAction="http://tempuri.org/IServiceBloodCrowd/GetDonorsByIMC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addDonor">
+      <soap:operation soapAction="http://tempuri.org/IServiceBloodCrowd/addDonor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExportToXml">
+      <soap:operation soapAction="http://tempuri.org/IServiceBloodCrowd/ExportToXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateIMC">
+      <soap:operation soapAction="http://tempuri.org/IServiceBloodCrowd/CalculateIMC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateAge">
+      <soap:operation soapAction="http://tempuri.org/IServiceBloodCrowd/CalculateAge" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDonor">
+      <soap:operation soapAction="http://tempuri.org/IServiceBloodCrowd/RemoveDonor" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
