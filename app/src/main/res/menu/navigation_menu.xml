@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/search_Name"
+    android:title="GetDonorByName"/>
+
+    <item android:id="@+id/search_age"
+        android:title="GetDonorByAge"/>
+
+    <item android:id="@+id/search_imc"
+        android:title="GetDonorByIMC"/>
+</menu>
