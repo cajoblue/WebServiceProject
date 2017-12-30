@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="pt.ipleiria.celsoteixeira.mobileapplication.Activity_searchByIMC"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/id_minIMC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mínimo IMC"/>
+
+    <EditText
+        android:id="@+id/minIMC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"/>
+
+    <TextView
+        android:id="@+id/id_maxIMC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Máximo IMC"/>
+
+    <EditText
+        android:id="@+id/maxIMC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"/>
+
+    <Button
+        android:id="@+id/button_searchByIMC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:onClick="button_searchByIMC"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listView_searchByIMC" />
+
+</LinearLayout>

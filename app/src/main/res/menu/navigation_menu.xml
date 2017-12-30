@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-<item android:id="@+id/search_Name"
-    android:title="GetDonorByName"/>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/search_age"
-        android:title="GetDonorByAge"/>
+    <item
+        android:id="@+id/action_network"
+        android:onClick="onClick_NetworkItem"
+        android:icon="@drawable/ic_action_network"
+        android:title="@string/get_contacts_from_web_service"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/ic_action_search"
+        android:icon="@drawable/ic_action_search"
+        android:title=""
+        app:showAsAction="always" />
 
-    <item android:id="@+id/search_imc"
-        android:title="GetDonorByIMC"/>
+
 </menu>

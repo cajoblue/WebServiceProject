@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/search_name"
+        android:title="Search by name"
+        android:onClick="OnClick_searchByNAme"/>
+
+    <item android:id="@+id/search_age"
+        android:title="Search by age"
+        android:onClick="OnClick_searchByAge"/>
+
+    <item android:id="@+id/search_bloodtype"
+        android:title="Search by bloodtype"
+        android:onClick="OnClick_searchByBlood"/>
+
+
+    <item android:id="@+id/search_bloodcompatible"
+        android:title="Search by bloodcompatible"/>
+
+    <item android:id="@+id/search_imc"
+        android:title="Search by imc"
+        android:onClick="OnClick_searchByIMC"/>
+
+</menu>
