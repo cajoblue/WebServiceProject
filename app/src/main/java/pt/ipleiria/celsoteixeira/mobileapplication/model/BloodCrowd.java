@@ -65,11 +65,19 @@ import pt.ipleiria.celsoteixeira.mobileapplication.MainActivity;
  * Created by celsoTeixeira on 12/18/2017.
  */
 
+
+
 public class BloodCrowd extends Context implements Serializable {
+
+    public interface VolleyTaskComplete {
+        void complete(ArrayList<Donor> array);
+    }
 
     private ArrayAdapter<Donor> adapter;
     private ArrayList<Donor> donors;
     private ArrayList<String> bloodTypes = new ArrayList<String>();
+    private VolleyTaskComplete volleyTaskComplete;
+
 
     public BloodCrowd() {
         this.donors = new ArrayList<>();
@@ -647,20 +655,18 @@ public class BloodCrowd extends Context implements Serializable {
         return false;
     }
 
-    public ArrayList<Donor> searchDonorsByName(String name) {
+    public void searchDonorsByName(String name, VolleyTaskComplete volleyTaskComplete) {
 
 
         final String url = "http://projetois-1.apphb.com/ServiceBloodCrowd.svc/rest/searchByName?donorName=" + name;
-        ArrayList<Donor> res = webserviceRequest(url);
-
-
-        return res;
+        this.volleyTaskComplete = volleyTaskComplete;
+        webserviceRequest(url);
     }
 
     public ArrayList<Donor> searchDonorsByAge(int minAge, int maxAge) {
 
         final String url = "http://projetois-1.apphb.com/ServiceBloodCrowd.svc/rest/searchByAge?minAge=" + minAge + "&maxAge=" + maxAge;
-        ArrayList<Donor> res = webserviceRequest(url);
+        //ArrayList<Donor> res = webserviceRequest(url);
 
         /*
         ArrayList<Donor> res = new ArrayList<>();
@@ -670,7 +676,7 @@ public class BloodCrowd extends Context implements Serializable {
             }
         }
         */
-        return webserviceRequest(url);
+        return null;
     }
 
     public ArrayList<Donor> searchDonorsByIMc(double minImc, double maxImc) {
@@ -697,7 +703,7 @@ public class BloodCrowd extends Context implements Serializable {
     }
 
 
-    public ArrayList<Donor> webserviceRequest(String url) {
+    public void webserviceRequest(String url) {
         RequestQueue queue = Volley.newRequestQueue(this);
         final ArrayList<Donor> list_donors = new ArrayList<Donor>();
         //fazemos quando a resposta sera um array. No caso será um array de contactos, se fosse um objtivo usariamos uma JsonObjetRequest
@@ -750,9 +756,9 @@ public class BloodCrowd extends Context implements Serializable {
 
                         //*ja tenho a lista de contactos e vou percorre-la
                         for (Donor var_donor : donors) {
-
                             list_donors.add(var_donor);
                         }
+                        volleyTaskComplete.complete(list_donors);
                         //*para refrescar a agenda
                         //  adapter.notifyDataSetChanged();
                     }
@@ -776,8 +782,6 @@ public class BloodCrowd extends Context implements Serializable {
             }
         };
         queue.add(request);
-
-        return list_donors;
     }
 
 }
